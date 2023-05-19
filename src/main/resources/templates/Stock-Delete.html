@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Delete</title>
+    <style>
+        /* Estilos del botón "Go Back" */
+        #goBackButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Estilos del botón "All Stock" */
+        .allStockButton {
+            display: inline-block;
+            margin: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Stock Delete</h1>
+
+<form action="/stocks/{id}" method="post">
+    <label for="stockId">Stock ID:</label>
+    <input type="text" id="stockId" name="stockId" required>
+    <button type="submit">Delete</button>
+</form>
+
+<div id="resultMessage"></div>
+
+<a href="/stock-search" class="allStockButton">Stock</a>
+<a href="/stock-page" id="goBackButton">Back</a>
+
+<script>
+    var form = document.querySelector('form');
+    var resultMessage = document.getElementById('resultMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var stockId = document.getElementById('stockId').value;
+
+        fetch('/stocks/' + stockId, {
+            method: 'DELETE'
+        })
+        .then(function(response) {
+            if (response.ok) {
+                resultMessage.textContent = 'Stock deleted successfully.';
+            } else if (response.status === 400) {
+                resultMessage.textContent = 'Unable to delete stock.';
+            } else if (response.status === 404) {
+                resultMessage.textContent = 'Selected ID does not exist.';
+            }
+        })
+        .catch(function(error) {
+            resultMessage.textContent = 'An error occurred.';
+            console.error('Error:', error);
+        });
+    });
+</script>
+</body>
+</html>

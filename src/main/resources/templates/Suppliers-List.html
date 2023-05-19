@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Supplier List</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        .search-form {
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        .search-form input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        .search-form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: gray;
+            color: white;
+            border: none;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .button-wrapper {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .button-wrapper button {
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Supplier List</h1>
+
+<div class="button-wrapper">
+    <button onclick="getAllSuppliers()">Suppliers</button>
+    <div class="search-form">
+        <form id="searchForm" onsubmit="searchSupplier(event)">
+            <input type="text" id="idInput" placeholder="Enter ID">
+            <button type="button" onclick="searchSupplier(event)">Search</button>
+        </form>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Supplier Name</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Address 3</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Postcode</th>
+        <th>Contact Name</th>
+        <th>Contact Email</th>
+        <th>Contact Phone</th>
+        <th>Comments</th>
+    </tr>
+
+    <tr th:each="supplier : ${supplierList}">
+        <td th:text="${supplier.id_supplier}"></td>
+        <td th:text="${supplier.supplier_name}"></td>
+        <td th:text="${supplier.address_1}"></td>
+        <td th:text="${supplier.address_2}"></td>
+        <td th:text="${supplier.address_3}"></td>
+        <td th:text="${supplier.city}"></td>
+        <td th:text="${supplier.country}"></td>
+        <td th:text="${supplier.postcode}"></td>
+        <td th:text="${supplier.contact_name}"></td>
+        <td th:text="${supplier.contact_email}"></td>
+        <td th:text="${supplier.contact_phone}"></td>
+        <td th:text="${supplier.comments}"></td>
+    </tr>
+</table>
+
+<p class="error-message" th:text="${errorMessage}"></p>
+
+<button class="back-button" onclick="goBack()">Back</button>
+
+<script>
+    function getAllSuppliers() {
+        window.location.href = '/supplier-list';
+    }
+
+    function goBack() {
+        window.location.href = '/supplier-page';
+    }
+
+    function searchSupplier(event) {
+        event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+        const idInput = document.getElementById('idInput');
+        const id = idInput.value;
+
+        // Realiza una solicitud AJAX para buscar el proveedor por ID
+        fetch('/supplier-list?id=' + id)
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const newDocument = parser.parseFromString(html, 'text/html');
+
+                // Reemplaza la tabla y el mensaje de error en la página actual con los nuevos resultados de búsqueda
+                const currentTable = document.querySelector('table');
+                const currentErrorMessage = document.querySelector('.error-message');
+                const newTable = newDocument.querySelector('table');
+                const newErrorMessage = newDocument.querySelector('.error-message');
+
+                currentTable.parentNode.replaceChild(newTable, currentTable);
+                currentErrorMessage.parentNode.replaceChild(newErrorMessage, currentErrorMessage);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+[33mcommit cd7d85d600fc63e0cc9840c65ea438c0147454ad[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop-ralmacenp[m[33m)[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Mon May 15 14:26:22 2023 +0200
+
+    pagina product-list hecha con todos los botones bien pero id_product no funciona del todo, en pagina product menu ya esta el boton back
+
+[33mcommit c692d6dd01f07b5c13ac249e807b2f22459c1d13[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Mon May 15 13:57:22 2023 +0200
+
+    pagina product-list hecha con todos los botones bien
+
+[33mcommit b8fd2d7f38866f3053b4b0af9ba64e8c9da7a15e[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Mon May 15 13:28:13 2023 +0200
+
+    creado boton busqueda por id_product en tabla de products pero me repite el campo
+
+[33mcommit 8d6e1d7f163802ef94c01e59d76088a0eecb2ec4[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Mon May 15 13:19:54 2023 +0200
+
+    creada tabla de products
+
+[33mcommit d1339b35fd181a531f7072b7feb7be2a2448a1f2[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Fri May 12 16:17:08 2023 +0200
+
+    antes de cambiar para el create en intefaz grafica
+
+[33mcommit 7a458c2e31c8dbc102d3f6a08b45d342550186ab[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Thu May 11 12:55:21 2023 +0200
+
+    borrar test
+
+[33mcommit 20444da5fcaa37709917010e792f1e59af28db3d[m[33m ([m[1;31morigin/develop-ralmacenp[m[33m)[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Thu May 11 10:10:37 2023 +0200
+
+    hecho la funcion de eliminar en stock
+
+[33mcommit 4fe8be584bafb0823ec3cced1cef569779303257[m[33m ([m[1;32mmain[m[33m)[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Wed May 10 22:51:49 2023 +0200
+
+    hecho la funcion de eliminar en stock
+
+[33mcommit ac8114472269f3717bbb65693518387ead388a47[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Wed May 10 22:11:34 2023 +0200
+
+    entrada a pagina delete de stock
+
+[33mcommit 8900db8875711737ca394ff3cbf035de38d5a85b[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Wed May 10 10:05:29 2023 +0200
+
+    hecho los diferentes menus para acceder a product,stock y suppliers menu y el boton de get all de los tres
+
+[33mcommit 61827975775d0adb3174a2d75b4dbff684ced0ab[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Tue May 9 20:00:56 2023 +0200
+
+    hecho los diferentes menus para acceder a product,stock y suppliers menu
+
+[33mcommit fe46d7f8eeb1ba1b2f92b8246baea46107086052[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Mon May 8 10:33:58 2023 +0200
+
+    hecho navbar
+
+[33mcommit 2a78065818ac6ade865e95e420f9651c8665f8a0[m
+Author: RaynielMontalvo <129050892+RaynielMontalvo@users.noreply.github.com>
+Date:   Sun May 7 17:19:24 2023 +0200
+
+    ya sale el html en el buscador
+
+[33mcommit 89890c963e1afb7bcc1e58d6bd01d56af2b879fc[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Thu May 4 12:20:57 2023 +0200
+
+    Corrección de las relacciones entre las entidades Stck y Product
+
+[33mcommit bee156738f6c6f6fe77bd1bc4eb66b2bf05f6269[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Thu May 4 12:01:54 2023 +0200
+
+    Corrección de Bugs en el método mapToResponse de la clase SupplierService
+
+[33mcommit 822c971d08700eb2e0004963cb5846e57edecf3b[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Wed May 3 10:17:12 2023 +0200
+
+    Actualización del POM
+
+[33mcommit 225e286cfab3d10324804acf8aca759b60d821a2[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 13:00:09 2023 +0200
+
+    Creación e instanciación de los metodos de la clase SupplierController
+
+[33mcommit 13b9eb7b24eeb1186005adeb444d6f224e780458[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:55:09 2023 +0200
+
+    Creación de la clase SupplierController
+
+[33mcommit 6319a5b2201423654ba6f0df920b17505b5d0670[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:52:16 2023 +0200
+
+    Instanciado el método update() de la clase SupplierService
+
+[33mcommit cebdd9bc563a74d6d1b13b734bfdd66382cff163[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:21:15 2023 +0200
+
+    Instanciado el método create() de la clase SupplierService
+
+[33mcommit f12c7b33bf86209ac7de7b9499ab60b43981334c[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:09:53 2023 +0200
+
+    Instanciado el método findById() de la clase SupplierService
+
+[33mcommit e6a62b52b07b407d732e0e062592efee84e82440[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:07:05 2023 +0200
+
+    Instanciado el método delete() de la clase SupplierService
+
+[33mcommit 79d1fe4ed7ea3c705432c591a4568c773f8f08ee[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:05:07 2023 +0200
+
+    Correccion de Bugs
+
+[33mcommit dcfd55fb1350c1df2216f0f5b11723277f25362a[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 12:03:26 2023 +0200
+
+    Instanciado el método getAll() de la clase SupplierService
+
+[33mcommit 83376606c9b49f751ded26c2cb2096c2a030c47b[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 11:59:57 2023 +0200
+
+    Instanciado el método mapToEntity() de la clase SupplierService
+
+[33mcommit 9fca8c9f68678c575da5bbc451e9aff7b5efde36[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 11:49:21 2023 +0200
+
+    Creada Clase SupplierService e instanciado el Metodo mapToResponse()
+
+[33mcommit 55ff5f1ece0b26c157e67225e9850f91ed28c561[m
+Author: Akio17 <61455289+Akio17@users.noreply.github.com>
+Date:   Sun Apr 30 11:18:18 2023 +0200
+
+    Creada interfaz ISupplierService
+
+[33mcommit 43d213dfae78a21049c1104251b120adc263dc0c[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 14:13:47 2023 +0200
+
+    Creada interfaz SupplierMapper
+
+[33mcommit dabec0736ce451cb8ed56789db616411aae3b0ba[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 13:54:57 2023 +0200
+
+    Creado DTO UpdateSupplierRequest
+
+[33mcommit bf6aece93b4e8b8d45ff6d6a22c7c40c4f7aba35[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 13:50:48 2023 +0200
+
+    Correccion bugs en DTO
+
+[33mcommit 50bfe3a41216a605a8e0341ab75823a5d54dcdab[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 13:44:53 2023 +0200
+
+    Creado DTO SuppliersResponse
+
+[33mcommit c03aeb80e4821ba05db6259e6d2c23ab47af01af[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 13:37:26 2023 +0200
+
+    Creado DTO SupplierResponse
+
+[33mcommit 2850c967099d4e34bb054488b0b3cdfc1ee6edf6[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 12:36:50 2023 +0200
+
+    Correccion de bugs
+
+[33mcommit 094002c4817e57b3684b6cf9e0d2e7e67325b2e5[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 11:33:51 2023 +0200
+
+    Instanciado el metodo create en la clase StockController
+
+[33mcommit 41772ac0391598ce7f9fe3101122e8989949dfe1[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 11:17:44 2023 +0200
+
+    Instanciados todos lo metodos de la clase StockController
+
+[33mcommit bededa94c4dab2e2f4255a9389c708d31bc0b5a0[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 10:58:24 2023 +0200
+
+    Creada la clase StockController
+
+[33mcommit 0c418c0e42f7feefa55e63c0b8e10132f4ede648[m
+Author: [Akio17] <[victor17sanchezsanchez@gmail.com]>
+Date:   Fri Apr 28 10:44:48 2023 +0200
+
+    Instanciado el metodo update() de la clase StockService
+
+[33mcommit 5cc118331af04943cf4adf74234a

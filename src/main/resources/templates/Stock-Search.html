@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock List</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: grey;
+            color: black;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .button-container a {
+            margin: 5px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+
+        #search-container {
+            display: none;
+        }
+
+        #result {
+            color: red;
+        }
+
+        #go-back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Stock Menu</h1>
+
+<div class="button-container">
+    <a href="/stock-search" class="button">Stock</a>
+    <button onclick="toggleSearchForm()" class="button">ID</button>
+    <!--    <a href="/stocks/create" class="button">Create</a>-->
+    <!--    <a href="/stocks/update" class="button">Update</a>-->
+    <!--    <a href="/stocks/delete" class="button">Delete</a>-->
+</div>
+
+<div id="search-container">
+    <input type="long" id="search-input" placeholder="ID">
+    <button onclick="searchById()" class="button">Search</button>
+</div>
+
+<h2>Stock List</h2>
+
+<table id="stock-table">
+    <tr>
+        <th>ID Stock</th>
+        <th>ID Product</th>
+    </tr>
+    <tr th:each="stock : ${stockList}">
+        <td th:text="${stock.id_stock}"></td>
+        <td th:text="${stock.product.id_product}"></td>
+    </tr>
+</table>
+
+<div id="result"></div>
+
+<a href="/stock-page" id="go-back-button">Go Back</a>
+
+<script>
+    var searchContainer = document.getElementById("search-container");
+
+    function toggleSearchForm() {
+        if (searchContainer.style.display === "none") {
+            showSearchForm();
+        } else {
+            hideSearchForm();
+        }
+    }
+
+    function showSearchForm() {
+        searchContainer.style.display = "block";
+    }
+
+    function hideSearchForm() {
+        searchContainer.style.display = "none";
+    }
+
+    function searchById() {
+        var id = document.getElementById("search-input").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                var resultContainer = document.getElementById("result");
+                var stockTable = document.getElementById("stock-table");
+
+                if (this.status == 200) {
+                    var foundStock = JSON.parse(xhr.responseText);
+                    stockTable.innerHTML = "<tr><th>ID Stock</th><th>ID Product</th></tr>";
+                    stockTable.innerHTML += "<tr><td>" + foundStock.id_stock + "</td><td>" + foundStock.product.id_product + "</td></tr>";
+                    resultContainer.innerHTML = "";
+                } else {
+                    stockTable.innerHTML = "<tr><th>ID Stock</th><th>ID Product</th></tr>";
+                    resultContainer.innerHTML = "No se encontró ningún stock con ese ID.";
+                }
+
+                hideSearchForm(); // Oculta el área de búsqueda después de realizar la búsqueda
+            }
+        };
+        xhr.open("GET", "/stocks/" + id, true);
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

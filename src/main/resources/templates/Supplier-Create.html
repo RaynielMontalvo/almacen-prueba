@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier Create</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .create-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .create-button:hover {
+            background-color: darkgreen;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-decoration: none;
+            color: black;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .suppliers-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: black;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Supplier Create</h1>
+
+<a href="/supplier-list" class="suppliers-button">Suppliers</a>
+
+<form id="createSupplierForm" th:action="@{/supplier-create}" method="post">
+    <label for="supplierName">Supplier Name:</label>
+    <input type="text" id="supplierName" name="supplierName" required>
+
+    <label for="address1">Address 1:</label>
+    <input type="text" id="address1" name="address1">
+
+    <label for="address2">Address 2:</label>
+    <input type="text" id="address2" name="address2">
+
+    <label for="address3">Address 3:</label>
+    <input type="text" id="address3" name="address3">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+
+    <label for="comments">Comments:</label>
+    <input type="text" id="comments" name="comments">
+
+    <label for="contactEmail">Contact Email:</label>
+    <input type="email" id="contactEmail" name="contactEmail">
+
+    <label for="contactName">Contact Name:</label>
+    <input type="text" id="contactName" name="contactName">
+
+    <label for="contactPhone">Contact Phone:</label>
+    <input type="tel" id="contactPhone" name="contactPhone">
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country">
+
+    <label for="postcode">Postcode:</label>
+    <input type="text" id="postcode" name="postcode">
+
+    <button type="submit" class="create-button">Create</button>
+</form>
+
+<!-- Botón "Back" flotante en la esquina inferior derecha -->
+<a href="/supplier-page" class="back-button">Back</a>
+
+</body>
+</html>

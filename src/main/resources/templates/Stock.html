@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Stock Menu</title>
+  <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .menu a {
+            margin: 5px;
+            padding: 10px;
+            background-color: gray;
+            color: white;
+            text-decoration: none;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Stock Menu</h1>
+
+<div class="menu">
+  <a th:href="@{/stock-search}">Stock</a>
+  <a th:href="@{/stock-create}">Create</a>
+  <a th:href="@{/stock-update}">Update</a>
+  <a th:href="@{/stock-delete}" class="delete-button">Delete</a>
+</div>
+
+<a th:href="@{/}" class="back-button">Back</a>
+
+</body>
+</html>
